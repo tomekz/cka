@@ -40,8 +40,13 @@ Traffic
 # Exercise 1 - Use Kubeadm to install a basic cluster
 
 Prerequisites:
-- Prepare two vanilla VM's (No Kubernetes components installed) with the kubeadm binary installed 
-- Use kubeadmin to install a basic cluster on the first node
+- prepare cluster nodes
+    - Prepare two vanilla VM's (No Kubernetes components installed) with the kubeadm binary installed that will be cluster nodes
+    - install container runtime (e.g. [containerd](https://github.com/containerd/containerd/blob/main/docs/getting-started.md))
+    - install kubeadm on all the nodes
+
+- Use kubeadmin to install master server
+- setup pod network on all the nodes (flannel)
 - On second node, install kubeadm and join it to the cluster as a worker node
 
 I will use a ready made environment for this exercise, as I don't have the resources to create a multi-node cluster.
