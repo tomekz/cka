@@ -5,6 +5,14 @@ Docs: https://github.com/David-VTUK/CKA-StudyGuide/blob/master/RevisionTopics/01
 ## Manage role based access control (RBAC)
 ## Use Kubeadm to install a basic cluster
 ## Manage a highly-available Kubernetes cluster
+- the HA setup can be achieved by adding additional master node where:
+    - Kube API server is load balanced
+    - Controller Manager and Scheduler are running in active-passive mode (achieved with leader elect process)
+    ```sh
+     kube-controller-manager --leader-elect=true
+     ```
+    - etcd is running in a separate cluster consiting of minimal 3 nodes for the quorum to work
+
 ## Provision underlying infrastructure to deploy a Kubernetes cluster
 ## Perform a version upgrade on a Kubernetes cluster using Kubeadm
 ## Implement etcd backup and restore
